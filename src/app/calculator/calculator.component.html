@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<br>
+
+<div class="calculator">
+  <input type="number" [(ngModel)]="num1" placeholder="Enter number">
+  <select [(ngModel)]="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" [(ngModel)]="num2" placeholder="Enter number">
+  <button class="btn btn-primary" (click)="calculate()">Calculate</button>
+  <p *ngIf="result !== undefined">Result: {{ result }}</p>
+</div>
+
+<div>
+  Number 1::<input type="number" [(ngModel)]="num3" placeholder="Enter number 1">
+  Number 2::<input type="number" [(ngModel)]="num3" placeholder="Enter number 2">
+</div>
+
+<div>
+  <label for="repeatCount">Enter a number:</label>
+  <input type="number" id="repeatCount" [(ngModel)]="repeatCount" />
+  <button class="btn btn-success" (click)="generateHelloWorld()">Print Hello, World!</button>
+</div>

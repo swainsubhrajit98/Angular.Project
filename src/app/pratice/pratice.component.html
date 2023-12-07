@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div style="margin: 10px;padding: 10px;">
+  <button [ngStyle]="{'font-size.px':'20','color':'red','border-radius.px':10}" class="btn1">Sign In</button>
+<button [ngStyle]="AddStyle()">Sign Out</button>
+<br>
+<button [ngClass]="['btn-bold','btn-red']">Array</button>
+<button [ngClass]='(true)?"btn-bold":"btn-red"'>Object</button>
+<button [ngClass]="AddClass()">Function</button>
+
+<button appCustDirective>Apply</button>
+<br>
+</div>
+
+
+<div style="margin: 10px;padding: 10px;">
+  <button (click)="getData()">Function call</button>
+  <br><br>
+  <input type="text" #box (keyup)="getInputData(box.value)" placeholder="Enter Key up">
+  <br><br>
+  <input type="text" #box1 (keydown)="getInputData(box1.value)" placeholder="Enter Key down">
+  <br><br>
+  <input type="text" #box2 (blur)="getInputData(box2.value)" placeholder="Enter blur">
+  <br><br>
+  <input type="text" #box3 (input)="getInputData(box3.value)" placeholder="Enter Input">
+  <br><br>
+  <h1 (mouseover)="getInputData('Over the  Tag')">Mouse Over Function</h1>
+  <br><br>
+  <h1 (mouseleave)="getInputData('Leave the tag')">Mouse Leave Function</h1>
+  <br>
+  <input type="text" #box4 (keyup)="getValue(box4.value)" placeholder="Enter Your Name..." name="name">
+  <p>Your name is : {{displayValue}}</p>
+  <br>
+</div>
+
+<div style="margin: 10px;padding: 10px;">
+  <input type="text" #box6 placeholder="Enter your Name..." name="name" />
+  <button class="btn btn-success" (click)="getValue(box6.value)">Save</button>
+  Result: {{displayValue}}
+</div>
+
+<div style="margin: 10px;padding: 10px;">
+  <button (click)="counter('sum')">++</button>
+  <p>Count : {{count}}</p>
+  <button (click)="counter('sub')">--</button>
+</div>

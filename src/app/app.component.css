@@ -1,0 +1,9 @@
+.align-button{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+.align-button > div{
+    margin: 10px;
+  padding: 20px;
+}
