@@ -44,3 +44,9 @@
   <p>Count : {{count}}</p>
   <button (click)="counter('sub')">--</button>
 </div>
+
+<div style="margin: 5px;padding: 5px;">
+  <input type="text" name="username" value={{name}} disabled={{disable}}>
+  <br><br>
+  <input type="text" name="username" [value]=name disabled=disable>
+</div>
