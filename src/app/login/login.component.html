@@ -2,19 +2,31 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header">Login</div>
+        <div class="card-header">
+          <h4 style="text-align: center7;">Login</h4>
+        </div>
         <div class="card-body">
-          <form (submit)="login()">
-            <div class="form-group">
-              <label for="username">Username:</label>
-              <input type="text" id="username" name="username"class="form-control" [(ngModel)]="data.username" required>
+          <div>
+            <div class="alert alert-danger" *ngIf="showError">
+              {{msg}}
             </div>
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" id="password" class="form-control" name ="password"[(ngModel)]="data.password" required>
+            <div>
+              <div class="mb-3 mt-3">
+                <label for="loginId" class="form-label">User Name:</label>
+                <input type="loginId" class="form-control" id="loginId" required="true" [(ngModel)]="data.username"
+                  placeholder="Enter Password" name="username">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" [(ngModel)]="data.password" placeholder="Enter Password"
+                  name="password">
+              </div>
+            
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
+            <div>
+              <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

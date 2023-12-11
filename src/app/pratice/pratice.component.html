@@ -2,14 +2,14 @@
 <router-outlet></router-outlet>
 <div style="margin: 10px;padding: 10px;">
   <button [ngStyle]="{'font-size.px':'20','color':'red','border-radius.px':10}" class="btn1">Sign In</button>
-<button [ngStyle]="AddStyle()">Sign Out</button>
-<br>
-<button [ngClass]="['btn-bold','btn-red']">Array</button>
-<button [ngClass]='(true)?"btn-bold":"btn-red"'>Object</button>
-<button [ngClass]="AddClass()">Function</button>
+  <button [ngStyle]="AddStyle()">Sign Out</button>
+  <br>
+  <button [ngClass]="['btn-bold','btn-red']">Array</button>
+  <button [ngClass]='(true)?"btn-bold":"btn-red"'>Object</button>
+  <button [ngClass]="AddClass()">Function</button>
 
-<button appCustDirective>Apply</button>
-<br>
+  <button appCustDirective>Apply</button>
+  <br>
 </div>
 
 
@@ -45,8 +45,12 @@
   <button (click)="counter('sub')">--</button>
 </div>
 
-<div style="margin: 5px;padding: 5px;">
-  <input type="text" name="username" value={{name}} disabled={{disable}}>
-  <br><br>
-  <input type="text" name="username" [value]=name disabled=disable>
+<div style="margin: 10px;padding: 10px;">
+  <h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
+  <ng-template #ifBlock>
+    <h1>If condition</h1>
+  </ng-template>
+  <ng-template #elseBlock>
+    <h1>Else Condition</h1>
+  </ng-template>
 </div>

@@ -9,21 +9,24 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  msg!: string;
+  showError: boolean = false
   data={
     username:"",
     password:"",
   }
-
-
   constructor(private router: Router) { }
 
-  login(): void {
+  login(){
+    this.showError=false;
+    debugger;
     
-    if (this.data.username =='user1' && this.data.password =='password1') {
-      
+    if (this.data.username =='user' && this.data.password =='password') {
       this.router.navigate(['home',{flag:true}]);
     } else {
-      alert('Invalid credentials');
+      this.msg = "Please Enter Id and Password";
+      this.showError = true;
+      return;
     }
   }
 

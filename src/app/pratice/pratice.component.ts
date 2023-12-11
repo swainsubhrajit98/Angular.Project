@@ -37,7 +37,6 @@ export class PraticeComponent {
   counter(type:string){
     type=='sum' ? this.count++:this.count--;
   }
-  name="peter";
-  disable=true;
+  show="yes";
 
 }
