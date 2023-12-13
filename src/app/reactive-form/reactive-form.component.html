@@ -1,29 +1,88 @@
 <app-nav-bar></app-nav-bar>
-<router-outlet></router-outlet>
 <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h4>Login</h4>
-          </div>
-          <div class="card-body">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <label for="username" class="form-label">Username:</label>
-                <input type="text" id="username" class="form-control" formControlName="username">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 style="text-align: center;">Login</h4>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="alert alert-danger" *ngIf="showError1">
+              {{msg1}}
+            </div>
+            <div>
+              <div class="mb-3 mt-3">
+                <label for="loginId" class="form-label">User Name:</label>
+                <input type="loginId" class="form-control" id="loginId" required="true" [(ngModel)]="loginId"
+                  placeholder="Enter Password" name="username">
               </div>
-  
               <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
-                <input type="password" id="password" class="form-control" formControlName="password">
+                <input type="password" class="form-control" id="password" [(ngModel)]="password"
+                  placeholder="Enter Password" name="password">
               </div>
-  
-              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
-            </form>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="showRem" name="remember"> Remember me
+                </label>
+              </div>
+
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+<br>
+<hr>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 style="text-align: center;">Login</h4>
+        </div>
+        <div class="card-body" [formGroup]='formGroup'>
+          <div class="alert alert-danger" *ngIf="showError2">
+            {{msg2}}
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="loginId" class="form-label">LoginID:</label>
+            <input type="loginId" formControlName="userId" class="form-control" id="loginId" required="true"
+              placeholder="Enter Loign ID" name="loginId">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" formControlName='password' class="form-control" id="pwd" placeholder="Enter password"
+              name="pswd">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="showRem" name="remember"> Remember me
+            </label>
+          </div>{{showRem}}
+
+          <div formGroupName='personal'>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Address1:</label>
+              <input type="text" formControlName='address1' class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Address2:</label>
+              <input type="text" formControlName='address2' class="form-control">
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" (click)="onLoginReactive()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

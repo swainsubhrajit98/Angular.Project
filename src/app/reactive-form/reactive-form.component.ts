@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Login } from '../class/login';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,27 +10,46 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
-  loginForm!: FormGroup;
-  test!:FormControl;
+  loginId!: string;
+  password!: string;
+  msg1!: string;
+  msg2!: string;
+  showError1: boolean = false
+  showError2: boolean = false
+  showRem: any;
+  
+  
 
-  constructor(private formBuilder: FormBuilder) {
-      this.loginForm = this.formBuilder.group({
-        username: ['', [Validators.required,Validators.minLength(4)]],
-        password: ['', [Validators.required, Validators.minLength(6)]]
-      });
-      this.test= new FormControl("Please Enter All Mandatory Field...")
-  }
-
-
-
-  get formControls() {
-    return this.loginForm.controls;
-  }
-
-  onSubmit() {
-    if (this.loginForm.valid) {
-      // Perform login logic here
-      console.log('Login successful!', this.loginForm.value);
+  login(){
+    this.showError1=false;
+    debugger;
+    
+    if (this.loginId=="" || !this.loginId) {
+      this.msg1 = "Please Enter Id and Password";
+      this.showError1 = true;
+      return;
     }
+    let requestData: Login = { userId: this.loginId, password: this.password };
+    alert(JSON.stringify(requestData));
+  }
+  formGroup!: FormGroup
+  constructor(private fb: FormBuilder) {
+    this.formGroup = this.fb.group({
+      userId: [null, [Validators.required, Validators.minLength(4)]],
+      password: [null, [Validators.required, Validators.maxLength(8)]],
+      personal:this.fb.group({ address1: [], address2: []})
+    });
+  }
+
+  onLoginReactive(){
+    this.showError2=false;
+    debugger;
+    if(!this.formGroup.valid){
+    this.msg2="Please input All input Fields!!!";
+    this.showError2 = true;
+    return;
+    }
+    
+    alert(JSON.stringify(this.formGroup.value))
   }
 }
