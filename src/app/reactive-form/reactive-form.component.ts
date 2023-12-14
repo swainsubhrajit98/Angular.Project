@@ -10,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
-  loginId!: string;
+    loginId!: string;
   password!: string;
   msg1!: string;
   msg2!: string;

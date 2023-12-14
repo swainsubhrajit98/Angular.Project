@@ -11,7 +11,7 @@
   <button appCustDirective>Apply</button>
   <br>
 </div>
-
+<hr>
 
 <div style="margin: 10px;padding: 10px;">
   <button (click)="getData()">Function call</button>
@@ -32,19 +32,19 @@
   <p>Your name is : {{displayValue}}</p>
   <br>
 </div>
-
+<hr>
 <div style="margin: 10px;padding: 10px;">
   <input type="text" #box6 placeholder="Enter your Name..." name="name" />
   <button class="btn btn-success" (click)="getValue(box6.value)">Save</button>
   Result: {{displayValue}}
 </div>
-
+<hr>
 <div style="margin: 10px;padding: 10px;">
   <button (click)="counter('sum')">++</button>
   <p>Count : {{count}}</p>
   <button (click)="counter('sub')">--</button>
 </div>
-
+<hr>
 <div style="margin: 10px;padding: 10px;">
   <h1 *ngIf="show=='yes'; then ifBlock else elseBlock"></h1>
   <ng-template #ifBlock>
@@ -54,3 +54,56 @@
     <h1>Else Condition</h1>
   </ng-template>
 </div>
+<hr>
+<div>
+  <ng-template [ngIf]="color==='blue'">
+    <h1 style="color: blue;">The color is Blue</h1>
+  </ng-template>
+  <ng-template [ngIf]="color==='red'">
+    <h1 style="color: red;">The color is Red</h1>
+  </ng-template>
+  <var><ng-template [ngIf]="color==='yellow'">
+    <h1 style="color: yellow;">The color is Yellow</h1>
+  </ng-template></var>
+</div>
+
+<hr>
+<div [ngSwitch]="color">
+  <h1 *ngSwitchCase="'pink'" style="color: pink;">Pink color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green;">Green color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="color: yellow;">yellow color</h1>
+  <h1 *ngSwitchCase="'blue'" style="color: blue;">blue color</h1>
+  <h1 *ngSwitchCase="'orange'" style="color: orange;">orange color</h1>
+  <h1 *ngSwitchCase="'lightsalmon'" style="color: lightsalmon;">Lightsalmon color</h1>
+  <h1 *ngSwitchDefault>Default color</h1>
+</div>
+<hr>
+
+<h2 *ngFor="let item of users">Your Name is {{item}}</h2>
+<hr>
+<h2 *ngFor="let item of userDetails">Your Name is {{item.name}} ,mail id: {{item.email}} and phone Number: {{item.phNo}}</h2>
+<hr>
+<div>
+  <ul *ngFor="let user of userDetails">
+    <li>Name : {{user.name}}</li>
+    <li>Email : {{user.email}}</li>
+    <li>Phone No : {{user.phNo}}</li>
+    <li>Social Accounts :</li>
+    <ul *ngFor="let account of user.social">
+      <li>{{account}}</li>
+    </ul>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

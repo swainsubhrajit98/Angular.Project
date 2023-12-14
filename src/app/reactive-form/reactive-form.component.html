@@ -56,7 +56,7 @@
             <label for="loginId" class="form-label">LoginID:</label>
             <input type="loginId" formControlName="userId" class="form-control" id="loginId" required="true"
               placeholder="Enter Loign ID" name="loginId">
-          </div>
+                        </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password:</label>
             <input type="password" formControlName='password' class="form-control" id="pwd" placeholder="Enter password"
@@ -66,21 +66,21 @@
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" [(ngModel)]="showRem" name="remember"> Remember me
             </label>
-          </div>{{showRem}}
+            </div>{{showRem}}
 
           <div formGroupName='personal'>
             <div class="mb-3">
               <label for="pwd" class="form-label">Address1:</label>
               <input type="text" formControlName='address1' class="form-control">
-            </div>
-
-            <div class="mb-3">
-              <label for="pwd" class="form-label">Address2:</label>
-              <input type="text" formControlName='address2' class="form-control">
-            </div>
           </div>
           
-          <button type="submit" class="btn btn-primary" (click)="onLoginReactive()">Submit</button>
+            <div class="mb-3">
+            <label for="pwd" class="form-label">Address2:</label>
+            <input type="text" formControlName='address2' class="form-control">
+          </div>
+                    </div>
+          
+                    <button type="submit" class="btn btn-primary" (click)="onLoginReactive()">Submit</button>
         </div>
       </div>
     </div>
