@@ -35,7 +35,7 @@
 <hr>
 <div style="margin: 10px;padding: 10px;">
   <input type="text" #box6 placeholder="Enter your Name..." name="name" />
-  <button class="btn btn-success" (click)="getValue(box6.value)">Save</button>
+  <button class="btn btn-success" style="margin: 10px;" (click)="getValue(box6.value)">Save</button>
   Result: {{displayValue}}
 </div>
 <hr>
@@ -93,6 +93,12 @@
       <li>{{account}}</li>
     </ul>
   </ul>
+</div>
+
+<div>
+  <h1 [style.color]="color" [style.background-color]="bgColor">Hello World!</h1>
+  <h1 [style.color]="'red'">Hello World!</h1>
+  <button (click)="updateColor()">Update Color</button>
 </div>
 
 

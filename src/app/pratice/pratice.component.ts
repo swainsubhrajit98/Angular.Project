@@ -39,6 +39,7 @@ export class PraticeComponent {
   }
   show="yes";
   color="blue";
+  bgColor="green"
   users=['Alok','Amit','Soumya','Sarvam','Kanchan','Sai']
   userDetails=[
     {name:'Sarvam',email:'sarvam@gmail.com',phNo:'9870098009',social:['Facebook','Instagram','Snapchat']},
@@ -48,5 +49,10 @@ export class PraticeComponent {
     {name:'Kanchan',email:'kanchan@gmail.com',phNo:'9870098008',social:['Facebook','Instagram','Snapchat']},
     {name:'Amit',email:'amit@gmail.com',phNo:'9870098002',social:['Facebook','YouTube','Snapchat']},
   ]
+
+  updateColor(){
+    this.color="green";
+    this.bgColor="blue";
+  }
 
 }

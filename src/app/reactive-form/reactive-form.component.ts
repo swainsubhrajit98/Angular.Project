@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { Login } from '../class/login';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 

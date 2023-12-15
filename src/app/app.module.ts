@@ -11,6 +11,7 @@ import { CustDirectiveDirective } from './cust-directive.directive';
 import { LoginComponent } from './login/login.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     LoginComponent,
     NavBarComponent,
     ReactiveFormComponent,
+    RegistrationFormComponent,
     
   ],
   imports: [
